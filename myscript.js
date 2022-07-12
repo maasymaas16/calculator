@@ -11,7 +11,7 @@ const container = document.querySelector('.container');
 
 for (let i = 0; i < numRows; i++){
     const row = document.createElement('div');
-    row.classList.add('row')
+    row.classList.add('row'+i)
     container.appendChild(row)
     for (let j = 0; j < numCols; j++){
         const btn = document.createElement('button');
@@ -35,3 +35,26 @@ equal.textContent = '=';
 bottomRow.appendChild(zero);
 bottomRow.appendChild(equal);
 container.appendChild(bottomRow);
+
+const plus = document.createElement('button');
+plus.classList.add('box');
+plus.textContent = '+';
+
+const minus = document.createElement('button');
+minus.classList.add('box');
+minus.textContent = '-';
+
+const mult = document.createElement('button');
+mult.classList.add('box', 'mult');
+mult.textContent = "x";
+
+
+const divide = document.createElement('button');
+divide.classList.add('box', 'divide');
+divide.textContent='÷';
+
+
+document.querySelector('.row0').appendChild(divide);
+document.querySelector('.row1').appendChild(mult);
+document.querySelector('.row2').appendChild(minus);
+bottomRow.appendChild(plus)
