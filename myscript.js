@@ -45,11 +45,11 @@ bottomRow.appendChild(equal);
 calculator.appendChild(bottomRow);
 
 const plus = document.createElement('button');
-plus.classList.add('box');
+plus.classList.add('box', 'plus');
 plus.textContent = '+';
 
 const minus = document.createElement('button');
-minus.classList.add('box');
+minus.classList.add('box', 'plus');
 minus.textContent = '-';
 
 const mult = document.createElement('button');

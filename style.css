@@ -75,3 +75,8 @@ html, body {
     display: flex;
     justify-content: space-between;
 }
+
+.plus, .minus, .mult, .divide {
+    background-color: coral;
+    color: black;
+}
