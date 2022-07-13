@@ -4,15 +4,18 @@ let totalNums = 9;
 
 const container = document.querySelector('.container');
 
-// const buttonOne = document.createElement('button');
-// buttonOne.classList.add('box');
-// buttonOne.textContent = '1';
-// container.appendChild(buttonOne);
+const calculator = document.createElement('div');
+calculator.classList.add('calc');
+const display = document.createElement('div');
+display.classList.add('display');
+
+container.appendChild(calculator);
+calculator.appendChild(display);
 
 for (let i = 0; i < numRows; i++){
     const row = document.createElement('div');
     row.classList.add('row'+i)
-    container.appendChild(row)
+    calculator.appendChild(row)
     for (let j = 0; j < numCols; j++){
         const btn = document.createElement('button');
         btn.classList.add('box');
@@ -25,16 +28,21 @@ const bottomRow = document.createElement('div');
 bottomRow.classList.add('bottom');
 
 const zero = document.createElement('button');
-zero.classList.add('zero');
+zero.classList.add('box');
 zero.textContent = '0';
+
+const decimal = document.createElement('button');
+decimal.classList.add('box');
+decimal.textContent = '.';
 
 const equal = document.createElement('button');
 equal.classList.add('box');
 equal.textContent = '=';
 
+bottomRow.appendChild(decimal);
 bottomRow.appendChild(zero);
 bottomRow.appendChild(equal);
-container.appendChild(bottomRow);
+calculator.appendChild(bottomRow);
 
 const plus = document.createElement('button');
 plus.classList.add('box');
@@ -46,7 +54,7 @@ minus.textContent = '-';
 
 const mult = document.createElement('button');
 mult.classList.add('box', 'mult');
-mult.textContent = "x";
+mult.textContent = "×";
 
 
 const divide = document.createElement('button');
@@ -57,4 +65,18 @@ divide.textContent='÷';
 document.querySelector('.row0').appendChild(divide);
 document.querySelector('.row1').appendChild(mult);
 document.querySelector('.row2').appendChild(minus);
-bottomRow.appendChild(plus)
+bottomRow.appendChild(plus);
+
+const boxes = document.querySelectorAll('.box');
+boxes.forEach((box) => {
+    box.addEventListener('click', function () {
+        display.textContent += box.textContent;
+    });
+});
+
+const equals = document.querySelector('.equal');
+equals.addEventListener('click', function () {
+    display.textContent = '';
+
+});
+
