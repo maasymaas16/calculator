@@ -15,8 +15,6 @@ function operate(operator, num1, num2){
     }
 }
 
-
-
 let numRows = 3;
 let numCols = 3;
 let totalNums = 9;
@@ -37,7 +35,7 @@ for (let i = 0; i < numRows; i++){
     calculator.appendChild(row)
     for (let j = 0; j < numCols; j++){
         const btn = document.createElement('button');
-        btn.classList.add('box');
+        btn.classList.add('box', 'number');
         btn.textContent = totalNums-2+j;
         row.appendChild(btn);
     }
@@ -64,20 +62,20 @@ bottomRow.appendChild(equal);
 calculator.appendChild(bottomRow);
 
 const plus = document.createElement('button');
-plus.classList.add('box', 'plus');
+plus.classList.add('box', 'plus', 'operator');
 plus.textContent = '+';
 
 const minus = document.createElement('button');
-minus.classList.add('box', 'minus');
+minus.classList.add('box', 'minus', 'operator');
 minus.textContent = '-';
 
 const mult = document.createElement('button');
-mult.classList.add('box', 'mult');
+mult.classList.add('box', 'mult', 'operator');
 mult.textContent = "×";
 
 
 const divide = document.createElement('button');
-divide.classList.add('box', 'divide');
+divide.classList.add('box', 'divide', 'operator');
 divide.textContent='÷';
 
 
@@ -86,16 +84,17 @@ document.querySelector('.row1').appendChild(mult);
 document.querySelector('.row2').appendChild(minus);
 bottomRow.appendChild(plus);
 
-const boxes = document.querySelectorAll('.box');
-boxes.forEach((box) => {
-    box.addEventListener('click', function () {
-        display.textContent += box.textContent;
+const number = document.querySelectorAll('.number');
+number.forEach((num) => {
+    num.addEventListener('click', function () {
+        display.textContent += num.textContent;
     });
 });
 
-const equals = document.querySelector('.equal');
-equals.addEventListener('click', function () {
-    display.textContent = '';
-
+const operator = document.querySelectorAll('.operator');
+operator.forEach((op) => {
+    op.addEventListener('click', function () {
+        display.textContent = op.textContent;
+    });
 });
 
