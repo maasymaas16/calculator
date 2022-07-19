@@ -36,7 +36,7 @@ decimal.classList.add('box');
 decimal.textContent = '.';
 
 const equal = document.createElement('button');
-equal.classList.add('box');
+equal.classList.add('box', 'equal');
 equal.textContent = '=';
 
 bottomRow.appendChild(decimal);
@@ -49,7 +49,7 @@ plus.classList.add('box', 'plus');
 plus.textContent = '+';
 
 const minus = document.createElement('button');
-minus.classList.add('box', 'plus');
+minus.classList.add('box', 'minus');
 minus.textContent = '-';
 
 const mult = document.createElement('button');
