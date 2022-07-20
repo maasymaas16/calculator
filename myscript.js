@@ -1,3 +1,8 @@
+let num1 = 0;
+let num2 = 0;
+let operator = '';
+let curr = '';
+
 add = (num1, num2) => num1 + num2;
 subtract = (num1, num2) => num1 - num2;
 multiply = (num1, num2) => num1 * num2;
@@ -16,10 +21,17 @@ function operate(operator, num1, num2){
 }
 
 const display = document.querySelector('.display');
-const button = document.querySelectorAll('.btn');
-button.forEach((btn) => {
-    btn.addEventListener('click', function () {
-        display.textContent = btn.textContent;
+const number = document.querySelectorAll('.number');
+number.forEach((num) => {
+    num.addEventListener('click', function () {
+        display.textContent += num.textContent;
+    });
+});
+
+const oper = document.querySelectorAll('.operator');
+oper.forEach((op) => {
+    op.addEventListener('click', function () {
+        display.textContent = op.textContent;
     });
 });
 
